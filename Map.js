@@ -46,20 +46,21 @@ function initMap() {
     map.setTilt(45);
 
   // Markers
-    const horseInfowindow = new google.maps.InfoWindow({
-      content: "N/A"
-    });
-    const horseMarker = new google.maps.Marker({
-      position: { lat:33.99465811305482, lng:-81.03008581723475 },
-      map,
-      title: "Hello World!",
-    });
-    marker.addListener("click", () => {
-      horseInfowindow.open({
-        anchor: horseMarker,
-        map,
-      });
-    });
+                    // horseshoe
+                    const horseInfowindow = new google.maps.InfoWindow({
+                      content: "N/A"
+                    });
+                    const horseMarker = new google.maps.Marker({
+                      position: { lat:33.99465811305482, lng:-81.03008581723475 },
+                      map,
+                      title: "Hello World!",
+                    });
+                    marker.addListener("click", () => {
+                      horseInfowindow.open({
+                        anchor: horseMarker,
+                        map,
+                      });
+                    });
 }
 
 function toggleHeatmap() {
@@ -99,9 +100,6 @@ function getPoints() {
     new google.maps.LatLng(33.99527889888602, -81.02812945097112), //tcoop
   ];
 }
-
-
-
 
 // function that generates gradients using two colors
 function generateGradient(startColor, endColor) {

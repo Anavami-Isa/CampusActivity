@@ -1,15 +1,25 @@
 let map, heatmap;
+const UOFSC_MAP_BOUNDS = {
+  north: 34.00171475483253,
+  south: 33.98788548266928,
+  west: -81.03851026552532,
+  east: -81.019450539459
+};
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 17,
+    zoom: 18,
     center: { lat:33.99465811305482, lng:-81.03008581723475 },
     mapTypeId: "hybrid", //as opposed to "satellite", which does not show street/building names
     streetViewControl: false,
-    zoomControl: false,
+    //zoomControl: false,
     rotateControl: false,
     fullscreenControl: false,
     mapTypeControl: false,
+    restriction: {
+      latLngBounds: UOFSC_MAP_BOUNDS,
+      strictBounds: false,
+    },
     styles: [
       {
           "featureType": "poi", // Point of interest - typically includes buildings
@@ -17,8 +27,12 @@ function initMap() {
           "stylers": [
               { "visibility": "off" } // Hide labels
           ]
+      },
+      {
+        featureType: "transit.station.bus",
+        stylers: [{ visibility: "off" }]
       }
-  ]
+    ]
   });
 
 
@@ -27,16 +41,25 @@ function initMap() {
     map: map,
   });
   heatmap.set("radius", 40);
-  heatmap.set("opacity", heatmap.get("opacity") ? null : 0.2);
-  document
-    .getElementById("toggle-heatmap")
-    .addEventListener("click", toggleHeatmap);
-  document
-    .getElementById("change-gradient")
-    .addEventListener("click", changeGradient);
-
+  heatmap.set("opacity", 0.6);
     //45 deg tilt
     map.setTilt(45);
+
+  // Markers
+    const horseInfowindow = new google.maps.InfoWindow({
+      content: "N/A"
+    });
+    const horseMarker = new google.maps.Marker({
+      position: { lat:33.99465811305482, lng:-81.03008581723475 },
+      map,
+      title: "Hello World!",
+    });
+    marker.addListener("click", () => {
+      horseInfowindow.open({
+        anchor: horseMarker,
+        map,
+      });
+    });
 }
 
 function toggleHeatmap() {
@@ -77,7 +100,12 @@ function getPoints() {
   ];
 }
 
-function generateGradient(startColor, endColor, steps) {
+
+
+
+// function that generates gradients using two colors
+function generateGradient(startColor, endColor) {
+  steps = 13;
   const start = {
       r: parseInt(startColor.substring(1, 3), 16),
       g: parseInt(startColor.substring(3, 5), 16),

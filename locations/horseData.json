@@ -1,0 +1,1314 @@
+{
+    "status": "OK",
+    "epoch_analysis": "1712389711",
+    "venue_info": {
+        "venue_id": "ven_3476616b6a64322d706a6b5267492d3657647a655a554a4a496843",
+        "venue_name": "The Horseshoe",
+        "venue_address": "Sumter St Columbia, SC 29208",
+        "venue_address_list": [
+            "Sumter St",
+            "Columbia, SC 29208"
+        ],
+        "venue_timezone": "America/New_York",
+        "venue_dwell_time_min": 0,
+        "venue_dwell_time_max": 45,
+        "venue_dwell_time_avg": 22,
+        "venue_type": "PARK",
+        "venue_types": [
+            "park"
+        ],
+        "venue_lat": 33.9981588,
+        "venue_lon": -81.02888279999999
+    },
+    "analysis": [
+        {
+            "day_info": {
+                "day_int": 0,
+                "day_text": "Monday",
+                "venue_open": 0,
+                "venue_closed": 0,
+                "day_rank_mean": 2,
+                "day_rank_max": 5,
+                "day_mean": 26,
+                "day_max": 42
+            },
+            "busy_hours": [
+                8,
+                9,
+                13,
+                17,
+                18
+            ],
+            "quiet_hours": [
+                3
+            ],
+            "peak_hours": [
+                {
+                    "peak_info": "Skipped peak detection for this day. Currently we only              support peak detection for venue's where the day (6am) intensity starts below                   the mean intensity of the week. This day. We're logging this message to                       keep track how much it happens.",
+                    "peak_status": "Error"
+                }
+            ],
+            "surge_hours": {
+                "most_people_come": 4,
+                "most_people_leave": 19
+            },
+            "hour_analysis": [
+                {
+                    "hour": 6,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 7,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 8,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 9,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 10,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 11,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 12,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 13,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 14,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 15,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 16,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 17,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 18,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 19,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 20,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 21,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 22,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 23,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 0,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 1,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 2,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 3,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 4,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 5,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                }
+            ],
+            "day_raw": [
+                25,
+                35,
+                40,
+                40,
+                25,
+                35,
+                30,
+                40,
+                35,
+                25,
+                25,
+                40,
+                40,
+                25,
+                10,
+                5,
+                15,
+                15,
+                20,
+                20,
+                10,
+                5,
+                25,
+                25
+            ]
+        },
+        {
+            "day_info": {
+                "day_int": 1,
+                "day_text": "Tuesday",
+                "venue_open": 0,
+                "venue_closed": 0,
+                "day_rank_mean": 4,
+                "day_rank_max": 4,
+                "day_mean": 22,
+                "day_max": 51
+            },
+            "busy_hours": [
+                8,
+                12,
+                13,
+                14,
+                15
+            ],
+            "quiet_hours": [
+                21,
+                22,
+                23,
+                0
+            ],
+            "peak_hours": [
+                {
+                    "peak_info": "Skipped peak detection for this day. Currently we only              support peak detection for venue's where the day (6am) intensity starts below                   the mean intensity of the week. This day. We're logging this message to                       keep track how much it happens.",
+                    "peak_status": "Error"
+                }
+            ],
+            "surge_hours": {
+                "most_people_come": 11,
+                "most_people_leave": 16
+            },
+            "hour_analysis": [
+                {
+                    "hour": 6,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 7,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 8,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 9,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 10,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 11,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 12,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 13,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 14,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 15,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 16,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 17,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 18,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 19,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 20,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 21,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 22,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 23,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 0,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 1,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 2,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 3,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 4,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 5,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                }
+            ],
+            "day_raw": [
+                35,
+                30,
+                40,
+                25,
+                20,
+                25,
+                50,
+                50,
+                45,
+                40,
+                30,
+                20,
+                20,
+                10,
+                15,
+                5,
+                5,
+                0,
+                5,
+                10,
+                25,
+                20,
+                5,
+                15
+            ]
+        },
+        {
+            "day_info": {
+                "day_int": 2,
+                "day_text": "Wednesday",
+                "venue_open": 0,
+                "venue_closed": 0,
+                "day_rank_mean": 7,
+                "day_rank_max": 6,
+                "day_mean": 17,
+                "day_max": 35
+            },
+            "busy_hours": [],
+            "quiet_hours": [
+                22,
+                23,
+                0,
+                2,
+                3,
+                4
+            ],
+            "peak_hours": [
+                {
+                    "peak_start": 8,
+                    "peak_max": 10,
+                    "peak_end": 18,
+                    "peak_intensity": 2,
+                    "peak_delta_mean_week": 13
+                }
+            ],
+            "surge_hours": {
+                "most_people_come": 9,
+                "most_people_leave": 18
+            },
+            "hour_analysis": [
+                {
+                    "hour": 6,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 7,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 8,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 9,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 10,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 11,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 12,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 13,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 14,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 15,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 16,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 17,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 18,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 19,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 20,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 21,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 22,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 23,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 0,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 1,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 2,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 3,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 4,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 5,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                }
+            ],
+            "day_raw": [
+                15,
+                15,
+                15,
+                30,
+                35,
+                35,
+                30,
+                30,
+                25,
+                30,
+                30,
+                25,
+                15,
+                15,
+                15,
+                5,
+                5,
+                5,
+                5,
+                10,
+                5,
+                5,
+                5,
+                10
+            ]
+        },
+        {
+            "day_info": {
+                "day_int": 3,
+                "day_text": "Thursday",
+                "venue_open": 0,
+                "venue_closed": 0,
+                "day_rank_mean": 1,
+                "day_rank_max": 1,
+                "day_mean": 33,
+                "day_max": 100
+            },
+            "busy_hours": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+            ],
+            "quiet_hours": [
+                20,
+                21,
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "peak_hours": [
+                {
+                    "peak_start": 8,
+                    "peak_max": 13,
+                    "peak_end": 18,
+                    "peak_intensity": 5,
+                    "peak_delta_mean_week": 78
+                }
+            ],
+            "surge_hours": {
+                "most_people_come": 10,
+                "most_people_leave": 18
+            },
+            "hour_analysis": [
+                {
+                    "hour": 6,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 7,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 8,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 9,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 10,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 11,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 12,
+                    "intensity_txt": "High",
+                    "intensity_nr": 2
+                },
+                {
+                    "hour": 13,
+                    "intensity_txt": "High",
+                    "intensity_nr": 2
+                },
+                {
+                    "hour": 14,
+                    "intensity_txt": "High",
+                    "intensity_nr": 2
+                },
+                {
+                    "hour": 15,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 16,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 17,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 18,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 19,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 20,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 21,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 22,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 23,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 0,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 1,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 2,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 3,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 4,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 5,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                }
+            ],
+            "day_raw": [
+                10,
+                15,
+                25,
+                35,
+                65,
+                80,
+                80,
+                100,
+                90,
+                75,
+                70,
+                60,
+                25,
+                10,
+                5,
+                5,
+                15,
+                15,
+                5,
+                5,
+                0,
+                5,
+                5,
+                5
+            ]
+        },
+        {
+            "day_info": {
+                "day_int": 4,
+                "day_text": "Friday",
+                "venue_open": 0,
+                "venue_closed": 0,
+                "day_rank_mean": 4,
+                "day_rank_max": 3,
+                "day_mean": 22,
+                "day_max": 52
+            },
+            "busy_hours": [
+                11,
+                12,
+                13,
+                14,
+                16,
+                17
+            ],
+            "quiet_hours": [
+                6,
+                7,
+                8,
+                0,
+                1,
+                2,
+                4
+            ],
+            "peak_hours": [
+                {
+                    "peak_start": 9,
+                    "peak_max": 11,
+                    "peak_end": 22,
+                    "peak_intensity": 3,
+                    "peak_delta_mean_week": 30
+                }
+            ],
+            "surge_hours": {
+                "most_people_come": 10,
+                "most_people_leave": 19
+            },
+            "hour_analysis": [
+                {
+                    "hour": 6,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 7,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 8,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 9,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 10,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 11,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 12,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 13,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 14,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 15,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 16,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 17,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 18,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 19,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 20,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 21,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 22,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 23,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 0,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 1,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 2,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 3,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 4,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 5,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                }
+            ],
+            "day_raw": [
+                5,
+                5,
+                5,
+                20,
+                25,
+                50,
+                50,
+                45,
+                40,
+                30,
+                45,
+                40,
+                35,
+                25,
+                15,
+                15,
+                25,
+                15,
+                5,
+                5,
+                5,
+                10,
+                5,
+                10
+            ]
+        },
+        {
+            "day_info": {
+                "day_int": 5,
+                "day_text": "Saturday",
+                "venue_open": 0,
+                "venue_closed": 0,
+                "day_rank_mean": 7,
+                "day_rank_max": 7,
+                "day_mean": 17,
+                "day_max": 33
+            },
+            "busy_hours": [],
+            "quiet_hours": [
+                2,
+                3,
+                5
+            ],
+            "peak_hours": [
+                {
+                    "peak_info": "Skipped peak detection for this day. Currently we only              support peak detection for venue's where the day (6am) intensity starts below                   the mean intensity of the week. This day. We're logging this message to                       keep track how much it happens.",
+                    "peak_status": "Error"
+                }
+            ],
+            "surge_hours": {
+                "most_people_come": 14,
+                "most_people_leave": 5
+            },
+            "hour_analysis": [
+                {
+                    "hour": 6,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 7,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 8,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 9,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 10,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 11,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 12,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 13,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 14,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 15,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 16,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 17,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 18,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 19,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 20,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 21,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 22,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 23,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 0,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 1,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 2,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 3,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 4,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 5,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                }
+            ],
+            "day_raw": [
+                25,
+                20,
+                25,
+                15,
+                15,
+                10,
+                15,
+                15,
+                25,
+                25,
+                35,
+                30,
+                30,
+                25,
+                15,
+                15,
+                10,
+                10,
+                15,
+                10,
+                5,
+                5,
+                15,
+                5
+            ]
+        },
+        {
+            "day_info": {
+                "day_int": 6,
+                "day_text": "Sunday",
+                "venue_open": 0,
+                "venue_closed": 0,
+                "day_rank_mean": 5,
+                "day_rank_max": 2,
+                "day_mean": 18,
+                "day_max": 60
+            },
+            "busy_hours": [
+                10,
+                11,
+                12
+            ],
+            "quiet_hours": [
+                6,
+                7,
+                18,
+                4
+            ],
+            "peak_hours": [
+                {
+                    "peak_start": 9,
+                    "peak_max": 12,
+                    "peak_end": 2,
+                    "peak_intensity": 3,
+                    "peak_delta_mean_week": 38
+                }
+            ],
+            "surge_hours": {
+                "most_people_come": 9,
+                "most_people_leave": 13
+            },
+            "hour_analysis": [
+                {
+                    "hour": 6,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 7,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 8,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 9,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 10,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 11,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 12,
+                    "intensity_txt": "Above average",
+                    "intensity_nr": 1
+                },
+                {
+                    "hour": 13,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 14,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 15,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 16,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 17,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 18,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 19,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 20,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 21,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 22,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 23,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 0,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 1,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 2,
+                    "intensity_txt": "Average",
+                    "intensity_nr": 0
+                },
+                {
+                    "hour": 3,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 4,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                },
+                {
+                    "hour": 5,
+                    "intensity_txt": "Low",
+                    "intensity_nr": -2
+                }
+            ],
+            "day_raw": [
+                5,
+                0,
+                5,
+                20,
+                50,
+                60,
+                60,
+                35,
+                20,
+                25,
+                10,
+                10,
+                5,
+                5,
+                10,
+                10,
+                20,
+                10,
+                10,
+                15,
+                25,
+                15,
+                5,
+                10
+            ]
+        }
+    ],
+    "api_key_private": "pri_bb8ec53d767d4b879d7bfa8295c8c2b9"
+}

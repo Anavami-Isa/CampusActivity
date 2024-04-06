@@ -1,0 +1,14 @@
+{
+    "epoch": "1712393741",
+    "message": "Error: Venue found, but could not forecast this venue. Potential issues: This place is too new, or not does not have enough volume (visitors) to make a forecast.",
+    "status": "Error",
+    "venue_info": {
+        "venue_address": "1400 Greene St Columbia, SC 29208",
+        "venue_address_list": [
+            "1400 Greene St",
+            "Columbia, SC 29208"
+        ],
+        "venue_id": "ven_6b66475a6b77666b4f6c395267492d3661646c466532374a496843",
+        "venue_name": "Russell House University Union"
+    }
+}

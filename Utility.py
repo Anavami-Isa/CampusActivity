@@ -56,3 +56,53 @@ tcoopData = {
 tcoopResponse = requests.request("POST", url, params=tcoopData)
 with open('locations/tcoopData.json', 'w', encoding='utf-8') as f:
     json.dump(tcoopResponse.json(), f, ensure_ascii=False, indent=4)
+
+#300 Main
+MainData = {
+    'api_key_private': 'pri_bb8ec53d767d4b879d7bfa8295c8c2b9',
+    'venue_name': 'Civil and Environmental Engineering and Mechanical Engineering',
+    'venue_address': '300 Main St Columbia, SC 29208'
+}
+MainResponse = requests.request("POST", url, params=MainData)
+with open('locations/MainData.json', 'w', encoding='utf-8') as f:
+    json.dump(MainResponse.json(), f, ensure_ascii=False, indent=4)
+
+#Blatt
+BlattData = {
+    'api_key_private': 'pri_bb8ec53d767d4b879d7bfa8295c8c2b9',
+    'venue_name': 'Solomon Blatt Physical Education Center',
+    'venue_address': '1300 Wheat St Columbia, SC 29208'
+}
+BlattResponse = requests.request("POST", url, params=BlattData)
+with open('locations/BlattData.json', 'w', encoding='utf-8') as f:
+    json.dump(BlattResponse.json(), f, ensure_ascii=False, indent=4)
+
+#Booker T
+BookerData = {
+    'api_key_private': 'pri_bb8ec53d767d4b879d7bfa8295c8c2b9',
+    'venue_name': 'Booker T. Washington Auditorium',
+    'venue_address': '1400 Wheat St Columbia, SC 29201 United States'
+}
+BookerResponse = requests.request("POST", url, params=BookerData)
+with open('locations/BookerData.json', 'w', encoding='utf-8') as f:
+    json.dump(BookerResponse.json(), f, ensure_ascii=False, indent=4)
+
+#Coliseum
+ColiseumData = {
+    'api_key_private': 'pri_bb8ec53d767d4b879d7bfa8295c8c2b9',
+    'venue_name': 'Carolina Coliseum',
+    'venue_address': '701 Assembly St Columbia, SC 29201'
+}
+ColiseumResponse = requests.request("POST", url, params=ColiseumData)
+with open('locations/ColiseumData.json', 'w', encoding='utf-8') as f:
+    json.dump(ColiseumResponse.json(), f, ensure_ascii=False, indent=4)
+
+#Law School
+LawData = {
+    'api_key_private': 'pri_bb8ec53d767d4b879d7bfa8295c8c2b9',
+    'venue_name': 'University of South Carolina School of Law',
+    'venue_address': '1525 Senate St Columbia, SC 29208 United States'
+}
+LawResponse = requests.request("POST", url, params=LawData)
+with open('locations/LawData.json', 'w', encoding='utf-8') as f:
+    json.dump(LawResponse.json(), f, ensure_ascii=False, indent=4)

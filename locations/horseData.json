@@ -1,6 +1,6 @@
 {
     "status": "OK",
-    "epoch_analysis": "1712389711",
+    "epoch_analysis": "1712498839",
     "venue_info": {
         "venue_id": "ven_3476616b6a64322d706a6b5267492d3657647a655a554a4a496843",
         "venue_name": "The Horseshoe",
@@ -1244,7 +1244,7 @@
                 {
                     "hour": 22,
                     "intensity_txt": "Low",
-                      "intensity_nr": -2
+                    "intensity_nr": -2
                 },
                 {
                     "hour": 23,
@@ -1255,7 +1255,7 @@
                     "hour": 0,
                     "intensity_txt": "Low",
                     "intensity_nr": -2
-                 },
+                },
                 {
                     "hour": 1,
                     "intensity_txt": "Low",

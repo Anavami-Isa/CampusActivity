@@ -1,0 +1,14 @@
+{
+    "epoch": "1712498846",
+    "message": "Error: Venue found, but could not forecast this venue. Potential issues: This place is too new, or not does not have enough volume (visitors) to make a forecast.",
+    "status": "Error",
+    "venue_info": {
+        "venue_address": "1400 Wheat St Columbia, SC 29201",
+        "venue_address_list": [
+            "1400 Wheat St",
+            "Columbia, SC 29201"
+        ],
+        "venue_id": "ven_67656b64794f306d53554f5267492d36653953734930704a496843",
+        "venue_name": "Booker T. Washington Auditorium"
+    }
+}

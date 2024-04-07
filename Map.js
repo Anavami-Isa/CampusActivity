@@ -2,20 +2,24 @@ let map, heatmap;
 var curr_time = 0;
 var curr_day = 0;
 
-function getBusy(name, day, hour) {
-  console.log("before");
-  const filePath = "locations/" + name + "Data.json";
-  const fs = require('fs');
-  const jsonData = fs.readFileSync(filePath, 'utf8');
-  const data = JSON.parse(jsonData);
-  let dayData = {};
-  data.analysis.forEach(item => {
-    let dayInt = item.day_info.day_int;
-    dayData[dayInt] = item.day_raw;
-});
-  return dayData[day][hour];
-}
+// function getBusy(name, day, hour) {
+//   console.log("before");
+//   const filePath = "locations/" + name + "Data.json";
+//   const fs = require('fs');
+//   const jsonData = fs.readFileSync(filePath, 'utf8');
+//   const data = JSON.parse(jsonData);
+//   let dayData = {};
+//   data.analysis.forEach(item => {
+//     let dayInt = item.day_info.day_int;
+//     dayData[dayInt] = item.day_raw;
+// });
+//   return dayData[day][hour];
+// }
 
+const Law = [0, 30, 25, 35, 65, 60, 30, 15, 20, 50, 40, 50, 20, 10, 5, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 30, 35, 65, 60, 85, 60, 75, 40, 15, 0, 0, 0, 10, 20, 45, 20, 0, 0, 0, 0, 0, 0, 0, 0, 50, 60, 60, 30, 10, 10, 30, 25, 45, 50, 90, 100, 80, 35, 25, 35, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 5, 10, 25, 45, 50, 25, 20, 20, 25, 10, 15, 45, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 20, 25, 40, 80, 35, 20, 20, 45, 55, 25, 15, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 20, 10, 10, 15, 40, 45, 85, 80, 60, 25, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 15, 30, 35, 30, 15, 10, 20, 10, 5, 0, 0, 0, 0, 0, 0, 0];
+const Horse = [ 25, 35, 40, 40, 25, 35, 30, 40, 35, 25, 25, 40, 40, 25, 10, 5, 15, 15, 20, 20, 10, 5, 25, 25, 35, 30, 40, 25, 20, 25, 50, 50, 45, 40, 30, 20, 20, 10, 15, 5, 5, 0, 5, 10, 25, 20, 5, 15, 15, 15, 15, 30, 35, 35, 30, 30, 25, 30, 30, 25, 15, 15, 15, 5, 5, 5, 5, 10, 5, 5, 5, 10, 10, 15, 25, 35, 65, 80, 80, 100, 90, 75, 70, 60, 25, 10, 5, 5, 15, 15, 5, 5, 0, 5, 5, 5, 5, 5, 5, 20, 25, 50, 50, 45, 40, 30, 45, 40, 35, 25, 15, 15, 25, 15, 5, 5, 5, 10, 5, 10, 25, 20, 25, 15, 15, 10, 15, 15, 25, 25, 35, 30, 30, 25, 15, 15, 10, 10, 15, 10, 5, 5, 15, 5, 5, 0, 5, 20, 50, 60, 60, 35, 20, 25, 10, 10, 5, 5, 10, 10, 20, 10, 10, 15, 25, 15, 5, 10 ];
+const TCoop = [ 30, 40, 40, 50, 45, 55, 45, 45, 50, 55, 65, 70, 80, 75, 60, 50, 40, 0, 0, 0, 0, 0, 0, 0, 35, 35, 45, 40, 40, 35, 55, 60, 55, 55, 70, 85, 95, 90, 85, 70, 55, 0, 0, 0, 0, 0, 0, 0, 30, 35, 35, 35, 30, 45, 55, 65, 60, 60, 60, 80, 95, 95, 80, 55, 35, 0, 0, 0, 0, 0, 0, 0, 35, 45, 45, 40, 45, 45, 50, 55, 55, 55, 60, 80, 95, 100, 75, 50, 30, 0, 0, 0, 0, 0, 0, 0, 35, 50, 55, 40, 35, 45, 55, 60, 65, 75, 85, 90, 90, 85, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 35, 45, 55, 55, 55, 50, 50, 50, 45, 40, 35, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 30, 45, 55, 55, 60, 65, 55, 45, 35, 30, 30, 0, 0, 0, 0, 0, 0, 0, 0 ];
+const Strom = [ 30, 40, 40, 50, 45, 55, 45, 45, 50, 55, 65, 70, 80, 75, 60, 50, 40, 0, 0, 0, 0, 0, 0, 0, 35, 35, 45, 40, 40, 35, 55, 60, 55, 55, 70, 85, 95, 90, 85, 70, 55, 0, 0, 0, 0, 0, 0, 0, 30, 35, 35, 35, 30, 45, 55, 65, 60, 60, 60, 80, 95, 95, 80, 55, 35, 0, 0, 0, 0, 0, 0, 0, 35, 45, 45, 40, 45, 45, 50, 55, 55, 55, 60, 80, 95, 100, 75, 50, 30, 0, 0, 0, 0, 0, 0, 0, 35, 50, 55, 40, 35, 45, 55, 60, 65, 75, 85, 90, 90, 85, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 35, 45, 55, 55, 55, 50, 50, 50, 45, 40, 35, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 30, 45, 55, 55, 60, 65, 55, 45, 35, 30, 30, 0, 0, 0, 0, 0, 0, 0, 0 ];
 
 function initMap() {
   const UOFSC_MAP_BOUNDS = {
@@ -53,34 +57,37 @@ function initMap() {
   });
 
 
-  heatmap = new google.maps.visualization.HeatmapLayer({
+  heatmap = new google.maps.visualization.HeatmapLayer({ // red
     data: getPoints(),
     map: map,
   });
   heatmap.set("radius", 40);
   heatmap.set("opacity", 0.6);
+  heatmap.setMap(map);
+
+  // heatmap1 = new google.maps.visualization.HeatmapLayer({ // yellow
+  //   data: getPoints(33, 66),
+  //   map: map,
+  // });
+  // heatmap1.set("radius", 40);
+  // heatmap1.set("opacity", 0.6);
+  // heatmap1.set("gradient", "#db2f23");
+  // heatmap1.setMap(map);
+
+  // heatmap2 = new google.maps.visualization.HeatmapLayer({ // green
+  //   data: getPoints(0, 33),
+  //   map: map,
+  // });
+  // heatmap2.set("radius", 40);
+  // heatmap2.set("opacity", 0.6);
+  // heatmap2.set("gradient", "#db2f23");
+  // heatmap2.setMap(map);
+
+
     //45 deg tilt
     map.setTilt(45);
   const legend = document.getElementById("legend");
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
-
-  // Markers
-                    // horseshoe
-                    const horseInfowindow = new google.maps.InfoWindow({
-                      content: "<p>N/A<p>"
-
-                    });
-                    const horseMarker = new google.maps.Marker({
-                      position: { lat:33.99465811305482, lng:-81.03008581723475 },
-                      map,
-                      title: "Hello World!",
-                    });
-                    horseMarker.addListener("click", () => {
-                      horseInfowindow.open({
-                        anchor: horseMarker,
-                        map,
-                      });
-                    });
 }
 
 function toggleHeatmap() {
@@ -118,55 +125,25 @@ function getTime() {
 }
 function getDay() {
   var dayInput = document.getElementById("daySelector");
-  return daySelector.value;
+  return dayInput;
 }
 
 
 // Heatmap data: 3 points right now
 function getPoints() {
+  curr_time = getTime(); curr_day = getDay();
+  var ans = {};
   return [
-    curr_time = getTime(), curr_day = getDay(),
-    {location: new google.maps.LatLng(33.99811746170734, -81.0290723594025), weight: getBusy("horse", curr_day, curr_hour)}, //horseshoe
-    // {location: new google.maps.LatLng(33.99662788347111, -81.02724403700644), weight: getBusy(NAME, curr_day, curr_hour)}, //russell
-    // {location: new google.maps.LatLng(33.99527889888602, -81.02812945097112), weight: getBusy(NAME, curr_day, curr_hour)}, //tcoop
-    // {location: new google.maps.LatLng(33.99018, -81.02811), weight: getBusy(NAME, curr_day, curr_hour)}, //300 Main Street
-    // {location: new google.maps.LatLng(33.99186, -81.02655), weight: getBusy(NAME, curr_day, curr_hour)}, //Blatt field
-    // {location: new google.maps.LatLng(33.99245, -81.02578), weight: getBusy(NAME, curr_day, curr_hour)}, //Blatt PEC
-    // {location: new google.maps.LatLng(33.99324, -81.02585), weight: getBusy(NAME, curr_day, curr_hour)}, //Booker T. Washington
-    // {location: new google.maps.LatLng(33.99616, -81.02617), weight: getBusy(NAME, curr_day, curr_hour)}, //Callcott Social Sciences center
-    // {location: new google.maps.LatLng(33.99057, -81.02603), weight: getBusy(NAME, curr_day, curr_hour)}, //Band/Dance facility
-    // {location: new google.maps.LatLng(33.99373, -81.03293), weight: getBusy(NAME, curr_day, curr_hour)}, //Carolina Coliseum
-    // {location: new google.maps.LatLng(33.98827, -81.02303), weight: getBusy(NAME, curr_day, curr_hour)}, //Carolina indoor track and field complex
-    // {location: new google.maps.LatLng(33.99372, -81.03304), weight: getBusy(NAME, curr_day, curr_hour)}, //Carolina Volleyball Center
-    // {location: new google.maps.LatLng(33.99563, -81.02715), weight: getBusy(NAME, curr_day, curr_hour)}, //Center for health and well-being
-    // {location: new google.maps.LatLng(34.00023, -81.02315), weight: getBusy(NAME, curr_day, curr_hour)}, //Close-Hipp Buildings
-    // {location: new google.maps.LatLng(33.99544, -81.02971), weight: getBusy(NAME, curr_day, curr_hour)}, //Coker Life Sciences Building
-    // {location: new google.maps.LatLng(33.99454, -81.03332), weight: getBusy(NAME, curr_day, curr_hour)}, //Darla Moore School of Business
-    // {location: new google.maps.LatLng(33.99812, -81.02631), weight: getBusy(NAME, curr_day, curr_hour)}, //Davis College
-    // {location: new google.maps.LatLng(33.99622, -81.02813), weight: getBusy(NAME, curr_day, curr_hour)}, //Davis field
-    // {location: new google.maps.LatLng(33.99477, -81.03539), weight: getBusy(NAME, curr_day, curr_hour)}, //Discovery 1 Building
-    // {location: new google.maps.LatLng(33.99886, -81.02373), weight: getBusy(NAME, curr_day, curr_hour)}, //Gambrell Hall
-    // {location: new google.maps.LatLng(33.99240, -81.03005), weight: getBusy(NAME, curr_day, curr_hour)}, //horizon 1 building
-    // {location: new google.maps.LatLng(33.99872, -81.02483), weight: getBusy(NAME, curr_day, curr_hour)}, //Humanities Building
-    // {location: new google.maps.LatLng(33.98781, -81.03036), weight: getBusy(NAME, curr_day, curr_hour)}, //Innovation center building
-    // {location: new google.maps.LatLng(33.99501, -81.03036), weight: getBusy(NAME, curr_day, curr_hour)}, //Jones Physical Health Building
-    // {location: new google.maps.LatLng(34.00242, -81.02741), weight: getBusy(NAME, curr_day, curr_hour)}, //Joseph F. Rice School of Law
-    // {location: new google.maps.LatLng(33.99548, -81.03399), weight: getBusy(NAME, curr_day, curr_hour)}, //Koger Center
-    // {location: new google.maps.LatLng(33.99821, -81.02541), weight: getBusy(NAME, curr_day, curr_hour)}, //LeConte College
-    // {location: new google.maps.LatLng(33.99599, -81.02935), weight: getBusy(NAME, curr_day, curr_hour)}, //Longstreet Theatre
-    // {location: new google.maps.LatLng(33.99864, -81.02688), weight: getBusy(NAME, curr_day, curr_hour)}, //McKissick visitor center
-    // {location: new google.maps.LatLng(34.00236, -81.02621), weight: getBusy(NAME, curr_day, curr_hour)}, //McMaster College
-    // {location: new google.maps.LatLng(33.99302, -81.02858), weight: getBusy(NAME, curr_day, curr_hour)}, //Office of Student Financial Aid and Scholarships
-    // {location: new google.maps.LatLng(33.99782, -81.02551), weight: getBusy(NAME, curr_day, curr_hour)}, //Petigru College
-    // {location: new google.maps.LatLng(33.99698, -81.02938), weight: getBusy(NAME, curr_day, curr_hour)}, //School of Journalism and Mass Communications
-    // {location: new google.maps.LatLng(33.99607, -81.03431), weight: getBusy(NAME, curr_day, curr_hour)}, //School of Music
-    // {location: new google.maps.LatLng(33.99470, -81.03144), weight: getBusy(NAME, curr_day, curr_hour)}, //Science and Technology building
-    // {location: new google.maps.LatLng(33.99035, -81.03216), weight: getBusy(NAME, curr_day, curr_hour)}, //Strom fields
-    // {location: new google.maps.LatLng(33.99165, -81.03196), weight: getBusy(NAME, curr_day, curr_hour)}, //Strom Thurmond Wellness and Fitness Center
-    // {location: new google.maps.LatLng(33.98933, -81.02939), weight: getBusy(NAME, curr_day, curr_hour)}, //Swearingen Engineering center
-    // {location: new google.maps.LatLng(34.00104, -81.02511), weight: getBusy(NAME, curr_day, curr_hour)}, //The Graduate at Columbia
-    // {location: new google.maps.LatLng(33.97288, -81.01906), weight: getBusy(NAME, curr_day, curr_hour)} //Williams Brice Building
+    new google.maps.LatLng(33.99811746170734, -81.0290723594025), //horseshoe
+    new google.maps.LatLng(34.00254204351528, -81.02767006684807), // law school
+    new google.maps.LatLng(33.995025644092976, -81.02800069358183), // TCoop
+    new google.maps.LatLng(33.99154803913663, -81.03197903716678) // Strom
   ];
+  // if (Horse >= min && Horse <= max) ans.add(points[0]);
+  // if (Law >= min && Law <= max) ans.add(points[1]);
+  // if (TCoop >= min && TCoop <= max) ans.add(points[2]);
+  // if (Strom >= min && Strom <= max) ans.add(points[3]);
+  // return ans;
 }
 
 window.initMap = initMap;

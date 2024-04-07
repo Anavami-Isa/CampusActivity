@@ -1,7 +1,7 @@
 #map {
     position: absolute;
-    top: 55px; /* Adjusted to sit below the navbar */
-    left: 15%; /* Adjust based on the sidebar width */
+    top: 55px;
+    left: 15%;
     right: 0;
     bottom: 0;
     z-index: 1;
@@ -41,9 +41,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 55px; /* Ensure this is !important if necessary, but try to avoid !important */
+    height: 55px;
     background-image: linear-gradient(#AA271E, #4A3B42);
-    z-index: 2; /* Ensure navbar is above other content */
+    z-index: 2; 
 }
 .container {
     display: flex;
@@ -70,11 +70,11 @@ body {
 }
 #sidebarMenu {
     position: fixed;
-    top: 55px; /* Adjusted to sit below the navbar */
+    top: 55px;
     left: 0;
     width: 15%;
-    height: calc(100% - 55px); /* Take remaining height after navbar */
-    z-index: 2; /* Ensure sidebar is above the map */
+    height: calc(100% - 55px);
+    z-index: 2;
     overflow-y: auto;
     background: url(https://drive.google.com/thumbnail?id=1CmTH8inu_-xfQLq-ZkRoXITYFV9y35Ab);
     background-size: auto 100%;
@@ -127,3 +127,24 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     display: none;
     padding-left: 20px;
   }
+
+
+  #controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure controls are above the map */
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#timeSlider {
+    width: 200px;
+    margin-right: 10px;
+}
+
+#daySelector {
+    width: 100px;
+}

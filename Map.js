@@ -3,24 +3,17 @@ var curr_time = 0;
 var curr_day = 0;
 
 function getBusy(name, day, hour) {
+  console.log("before");
   const filePath = "locations/" + name + "Data.json";
-  let jsonData;
-  fetch(filePath)
-  .then(response => response.text())
-  .then(data => {
-    jsonData = data; // Print the contents of the file to the console
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-
+  const fs = require('fs');
+  const jsonData = fs.readFileSync(filePath, 'utf8');
   const data = JSON.parse(jsonData);
   let dayData = {};
   data.analysis.forEach(item => {
-      let dayInt = item.day_info.day_int;
-      dayData[dayInt] = item.day_raw;
-  });
-  console.log(dayData[day][hour]);
+    let dayInt = item.day_info.day_int;
+    dayData[dayInt] = item.day_raw;
+});
+  return dayData[day][hour];
 }
 
 
@@ -132,49 +125,47 @@ function getDay() {
 // Heatmap data: 3 points right now
 function getPoints() {
   return [
-    curr_time = getTime(), curr_day = getDay(), getBusy("horse", 0, 0),
-                new google.maps.LatLng(33.99811746170734, -81.0290723594025), //horseshoe
-                new google.maps.LatLng(33.99662788347111, -81.02724403700644), //russell
-                new google.maps.LatLng(33.99527889888602, -81.02812945097112), //tcoop
-                new google.maps.LatLng(33.99018, -81.02811), //300 Main Street
-                new google.maps.LatLng(33.99186, -81.02655), //Blatt field
-                new google.maps.LatLng(33.99245, -81.02578), //Blatt PEC
-                new google.maps.LatLng(33.99324, -81.02585), //Booker T. Washington
-                new google.maps.LatLng(33.99616, -81.02617), //Callcott Social Sciences center
-                new google.maps.LatLng(33.99057, -81.02603), //Band/Dance facility
-                new google.maps.LatLng(33.99373, -81.03293), //Carolina Coliseum
-                new google.maps.LatLng(33.98827, -81.02303), //Carolina indoor track and field complex
-                new google.maps.LatLng(33.99372, -81.03304), //Carolina Volleyball Center
-                new google.maps.LatLng(33.99563, -81.02715), //Center for health and well-being
-                new google.maps.LatLng(34.00023, -81.02315), //Close-Hipp Buildings
-                new google.maps.LatLng(33.99544, -81.02971), //Coker Life Sciences Building
-                new google.maps.LatLng(33.99454, -81.03332), //Darla Moore School of Business
-                new google.maps.LatLng(33.99812, -81.02631), //Davis College
-                new google.maps.LatLng(33.99622, -81.02813), //Davis field
-                new google.maps.LatLng(33.99477, -81.03539), //Discovery 1 Building
-                new google.maps.LatLng(33.99886, -81.02373), //Gambrell Hall
-                new google.maps.LatLng(33.99240, -81.03005), //horizon 1 building
-                new google.maps.LatLng(33.99872, -81.02483), //Humanities Building
-                new google.maps.LatLng(33.98781, -81.03036), //Innovation center building
-                new google.maps.LatLng(33.99501, -81.03036), //Jones Physical Health Building
-                new google.maps.LatLng(34.00242, -81.02741), //Joseph F. Rice School of Law
-                new google.maps.LatLng(33.99548, -81.03399), //Koger Center
-                new google.maps.LatLng(33.99821, -81.02541), //LeConte College
-                new google.maps.LatLng(33.99599, -81.02935), //Longstreet Theatre
-                new google.maps.LatLng(33.99864, -81.02688), //McKissick visitor center
-                new google.maps.LatLng(34.00236, -81.02621), //McMaster College
-                new google.maps.LatLng(33.99302, -81.02858), //Office of Student Financial Aid and Scholarships
-                new google.maps.LatLng(33.99782, -81.02551), //Petigru College
-                new google.maps.LatLng(33.99698, -81.02938), //School of Journalism and Mass Communications
-                new google.maps.LatLng(33.99607, -81.03431), //School of Music
-                new google.maps.LatLng(33.99470, -81.03144), //Science and Technology building
-                new google.maps.LatLng(33.99035, -81.03216), //Strom fields
-                new google.maps.LatLng(33.99165, -81.03196), //Strom Thurmond Wellness and Fitness Center
-                new google.maps.LatLng(33.98933, -81.02939), //Swearingen Engineering center
-                new google.maps.LatLng(34.00104, -81.02511), //The Graduate at Columbia
-                new google.maps.LatLng(33.97288, -81.01906) //Williams Brice Building
-
-
+    curr_time = getTime(), curr_day = getDay(),
+    {location: new google.maps.LatLng(33.99811746170734, -81.0290723594025), weight: getBusy("horse", curr_day, curr_hour)}, //horseshoe
+    // {location: new google.maps.LatLng(33.99662788347111, -81.02724403700644), weight: getBusy(NAME, curr_day, curr_hour)}, //russell
+    // {location: new google.maps.LatLng(33.99527889888602, -81.02812945097112), weight: getBusy(NAME, curr_day, curr_hour)}, //tcoop
+    // {location: new google.maps.LatLng(33.99018, -81.02811), weight: getBusy(NAME, curr_day, curr_hour)}, //300 Main Street
+    // {location: new google.maps.LatLng(33.99186, -81.02655), weight: getBusy(NAME, curr_day, curr_hour)}, //Blatt field
+    // {location: new google.maps.LatLng(33.99245, -81.02578), weight: getBusy(NAME, curr_day, curr_hour)}, //Blatt PEC
+    // {location: new google.maps.LatLng(33.99324, -81.02585), weight: getBusy(NAME, curr_day, curr_hour)}, //Booker T. Washington
+    // {location: new google.maps.LatLng(33.99616, -81.02617), weight: getBusy(NAME, curr_day, curr_hour)}, //Callcott Social Sciences center
+    // {location: new google.maps.LatLng(33.99057, -81.02603), weight: getBusy(NAME, curr_day, curr_hour)}, //Band/Dance facility
+    // {location: new google.maps.LatLng(33.99373, -81.03293), weight: getBusy(NAME, curr_day, curr_hour)}, //Carolina Coliseum
+    // {location: new google.maps.LatLng(33.98827, -81.02303), weight: getBusy(NAME, curr_day, curr_hour)}, //Carolina indoor track and field complex
+    // {location: new google.maps.LatLng(33.99372, -81.03304), weight: getBusy(NAME, curr_day, curr_hour)}, //Carolina Volleyball Center
+    // {location: new google.maps.LatLng(33.99563, -81.02715), weight: getBusy(NAME, curr_day, curr_hour)}, //Center for health and well-being
+    // {location: new google.maps.LatLng(34.00023, -81.02315), weight: getBusy(NAME, curr_day, curr_hour)}, //Close-Hipp Buildings
+    // {location: new google.maps.LatLng(33.99544, -81.02971), weight: getBusy(NAME, curr_day, curr_hour)}, //Coker Life Sciences Building
+    // {location: new google.maps.LatLng(33.99454, -81.03332), weight: getBusy(NAME, curr_day, curr_hour)}, //Darla Moore School of Business
+    // {location: new google.maps.LatLng(33.99812, -81.02631), weight: getBusy(NAME, curr_day, curr_hour)}, //Davis College
+    // {location: new google.maps.LatLng(33.99622, -81.02813), weight: getBusy(NAME, curr_day, curr_hour)}, //Davis field
+    // {location: new google.maps.LatLng(33.99477, -81.03539), weight: getBusy(NAME, curr_day, curr_hour)}, //Discovery 1 Building
+    // {location: new google.maps.LatLng(33.99886, -81.02373), weight: getBusy(NAME, curr_day, curr_hour)}, //Gambrell Hall
+    // {location: new google.maps.LatLng(33.99240, -81.03005), weight: getBusy(NAME, curr_day, curr_hour)}, //horizon 1 building
+    // {location: new google.maps.LatLng(33.99872, -81.02483), weight: getBusy(NAME, curr_day, curr_hour)}, //Humanities Building
+    // {location: new google.maps.LatLng(33.98781, -81.03036), weight: getBusy(NAME, curr_day, curr_hour)}, //Innovation center building
+    // {location: new google.maps.LatLng(33.99501, -81.03036), weight: getBusy(NAME, curr_day, curr_hour)}, //Jones Physical Health Building
+    // {location: new google.maps.LatLng(34.00242, -81.02741), weight: getBusy(NAME, curr_day, curr_hour)}, //Joseph F. Rice School of Law
+    // {location: new google.maps.LatLng(33.99548, -81.03399), weight: getBusy(NAME, curr_day, curr_hour)}, //Koger Center
+    // {location: new google.maps.LatLng(33.99821, -81.02541), weight: getBusy(NAME, curr_day, curr_hour)}, //LeConte College
+    // {location: new google.maps.LatLng(33.99599, -81.02935), weight: getBusy(NAME, curr_day, curr_hour)}, //Longstreet Theatre
+    // {location: new google.maps.LatLng(33.99864, -81.02688), weight: getBusy(NAME, curr_day, curr_hour)}, //McKissick visitor center
+    // {location: new google.maps.LatLng(34.00236, -81.02621), weight: getBusy(NAME, curr_day, curr_hour)}, //McMaster College
+    // {location: new google.maps.LatLng(33.99302, -81.02858), weight: getBusy(NAME, curr_day, curr_hour)}, //Office of Student Financial Aid and Scholarships
+    // {location: new google.maps.LatLng(33.99782, -81.02551), weight: getBusy(NAME, curr_day, curr_hour)}, //Petigru College
+    // {location: new google.maps.LatLng(33.99698, -81.02938), weight: getBusy(NAME, curr_day, curr_hour)}, //School of Journalism and Mass Communications
+    // {location: new google.maps.LatLng(33.99607, -81.03431), weight: getBusy(NAME, curr_day, curr_hour)}, //School of Music
+    // {location: new google.maps.LatLng(33.99470, -81.03144), weight: getBusy(NAME, curr_day, curr_hour)}, //Science and Technology building
+    // {location: new google.maps.LatLng(33.99035, -81.03216), weight: getBusy(NAME, curr_day, curr_hour)}, //Strom fields
+    // {location: new google.maps.LatLng(33.99165, -81.03196), weight: getBusy(NAME, curr_day, curr_hour)}, //Strom Thurmond Wellness and Fitness Center
+    // {location: new google.maps.LatLng(33.98933, -81.02939), weight: getBusy(NAME, curr_day, curr_hour)}, //Swearingen Engineering center
+    // {location: new google.maps.LatLng(34.00104, -81.02511), weight: getBusy(NAME, curr_day, curr_hour)}, //The Graduate at Columbia
+    // {location: new google.maps.LatLng(33.97288, -81.01906), weight: getBusy(NAME, curr_day, curr_hour)} //Williams Brice Building
   ];
 }
 

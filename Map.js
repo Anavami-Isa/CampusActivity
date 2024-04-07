@@ -58,29 +58,39 @@ function initMap() {
 
 
   heatmap = new google.maps.visualization.HeatmapLayer({ // red
-    data: getPoints(),
+    data: getPoints(66, 100),
     map: map,
   });
-  heatmap.set("radius", 40);
-  heatmap.set("opacity", 0.6);
+  heatmap.set("radius", 70);
+  heatmap.set("opacity", 0.8);
+  // heatmap.set("gradient", [
+  //   "rgba(252, 3, 3, 0)",
+  //   "rgba(252, 3, 3, 1)",
+  // ]);
   heatmap.setMap(map);
 
   // heatmap1 = new google.maps.visualization.HeatmapLayer({ // yellow
   //   data: getPoints(33, 66),
   //   map: map,
   // });
-  // heatmap1.set("radius", 40);
-  // heatmap1.set("opacity", 0.6);
-  // heatmap1.set("gradient", "#db2f23");
+  // heatmap1.set("radius", 100);
+  // heatmap1.set("opacity", 0.8);
+  // heatmap1.set("gradient", [
+  //   "rgba(252, 233, 58, 0)",
+  //   "rgba(252, 233, 58, 1)",
+  // ]);
   // heatmap1.setMap(map);
 
   // heatmap2 = new google.maps.visualization.HeatmapLayer({ // green
   //   data: getPoints(0, 33),
   //   map: map,
   // });
-  // heatmap2.set("radius", 40);
+  // heatmap2.set("radius", 100);
   // heatmap2.set("opacity", 0.6);
-  // heatmap2.set("gradient", "#db2f23");
+  // heatmap2.set("gradient", [
+  //   "rgba(3, 252, 15, 0)",
+  //   "rgba(3, 252, 15, 1)",
+  // ]);
   // heatmap2.setMap(map);
 
 
@@ -98,18 +108,6 @@ function changeGradient() {
   const gradient = [
     "rgba(0, 255, 255, 0)",
     "rgba(0, 255, 255, 1)",
-    "rgba(0, 191, 255, 1)",
-    "rgba(0, 127, 255, 1)",
-    "rgba(0, 63, 255, 1)",
-    "rgba(0, 0, 255, 1)",
-    "rgba(0, 0, 223, 1)",
-    "rgba(0, 0, 191, 1)",
-    "rgba(0, 0, 159, 1)",
-    "rgba(0, 0, 127, 1)",
-    "rgba(63, 0, 91, 1)",
-    "rgba(127, 0, 63, 1)",
-    "rgba(191, 0, 31, 1)",
-    "rgba(255, 0, 0, 1)",
   ];
 
   heatmap.set("gradient", heatmap.get("gradient") ? null : gradient);
@@ -132,18 +130,19 @@ function getDay() {
 // Heatmap data: 3 points right now
 function getPoints() {
   curr_time = getTime(); curr_day = getDay();
-  var ans = {};
+  pos = curr_day * 24 + curr_time;
+  var ans = [];
   return [
     new google.maps.LatLng(33.99811746170734, -81.0290723594025), //horseshoe
     new google.maps.LatLng(34.00254204351528, -81.02767006684807), // law school
     new google.maps.LatLng(33.995025644092976, -81.02800069358183), // TCoop
     new google.maps.LatLng(33.99154803913663, -81.03197903716678) // Strom
   ];
-  // if (Horse >= min && Horse <= max) ans.add(points[0]);
-  // if (Law >= min && Law <= max) ans.add(points[1]);
-  // if (TCoop >= min && TCoop <= max) ans.add(points[2]);
-  // if (Strom >= min && Strom <= max) ans.add(points[3]);
-  // return ans;
+  if (Horse[pos] >= min && Horse[pos] <= max) ans.push(points[0]);
+  if (Law[pos] >= min && Law[pos] <= max) ans.push(points[1]);
+  if (TCoop[pos] >= min && TCoop[pos] <= max) ans.push(points[2]);
+  if (Strom[pos] >= min && Strom[pos] <= max) ans.push(points[3]);
+  return ans;
 }
 
 window.initMap = initMap;

@@ -57,7 +57,7 @@ function initMap() {
                       map,
                       title: "Hello World!",
                     });
-                    marker.addListener("click", () => {
+                    horseMarker.addListener("click", () => {
                       horseInfowindow.open({
                         anchor: horseMarker,
                         map,
@@ -97,41 +97,49 @@ function changeRadius() {
 // Heatmap data: 3 points right now
 function getPoints() {
   return [
-    new google.maps.LatLng(33.99811746170734, -81.0290723594025), //horseshoe
-    new google.maps.LatLng(33.99662788347111, -81.02724403700644), //russell
-    new google.maps.LatLng(33.99527889888602, -81.02812945097112), //tcoop
+                new google.maps.LatLng(33.99811746170734, -81.0290723594025), //horseshoe
+                new google.maps.LatLng(33.99662788347111, -81.02724403700644), //russell
+                new google.maps.LatLng(33.99527889888602, -81.02812945097112), //tcoop
+                new google.maps.LatLng(33.99018, -81.02811), //300 Main Street
+                new google.maps.LatLng(33.99186, -81.02655), //Blatt field
+                new google.maps.LatLng(33.99245, -81.02578), //Blatt PEC
+                new google.maps.LatLng(33.99324, -81.02585), //Booker T. Washington
+                new google.maps.LatLng(33.99616, -81.02617), //Callcott Social Sciences center
+                new google.maps.LatLng(33.99057, -81.02603), //Band/Dance facility
+                new google.maps.LatLng(33.99373, -81.03293), //Carolina Coliseum
+                new google.maps.LatLng(33.98827, -81.02303), //Carolina indoor track and field complex
+                new google.maps.LatLng(33.99372, -81.03304), //Carolina Volleyball Center
+                new google.maps.LatLng(33.99563, -81.02715), //Center for health and well-being
+                new google.maps.LatLng(34.00023, -81.02315), //Close-Hipp Buildings
+                new google.maps.LatLng(33.99544, -81.02971), //Coker Life Sciences Building
+                new google.maps.LatLng(33.99454, -81.03332), //Darla Moore School of Business
+                new google.maps.LatLng(33.99812, -81.02631), //Davis College
+                new google.maps.LatLng(33.99622, -81.02813), //Davis field
+                new google.maps.LatLng(33.99477, -81.03539), //Discovery 1 Building
+                new google.maps.LatLng(33.99886, -81.02373), //Gambrell Hall
+                new google.maps.LatLng(33.99240, -81.03005), //horizon 1 building
+                new google.maps.LatLng(33.99872, -81.02483), //Humanities Building
+                new google.maps.LatLng(33.98781, -81.03036), //Innovation center building
+                new google.maps.LatLng(33.99501, -81.03036), //Jones Physical Health Building
+                new google.maps.LatLng(34.00242, -81.02741), //Joseph F. Rice School of Law
+                new google.maps.LatLng(33.99548, -81.03399), //Koger Center
+                new google.maps.LatLng(33.99821, -81.02541), //LeConte College
+                new google.maps.LatLng(33.99599, -81.02935), //Longstreet Theatre
+                new google.maps.LatLng(33.99864, -81.02688), //McKissick visitor center
+                new google.maps.LatLng(34.00236, -81.02621), //McMaster College
+                new google.maps.LatLng(33.99302, -81.02858), //Office of Student Financial Aid and Scholarships
+                new google.maps.LatLng(33.99782, -81.02551), //Petigru College
+                new google.maps.LatLng(33.99698, -81.02938), //School of Journalism and Mass Communications
+                new google.maps.LatLng(33.99607, -81.03431), //School of Music
+                new google.maps.LatLng(33.99470, -81.03144), //Science and Technology building
+                new google.maps.LatLng(33.99035, -81.03216), //Strom fields
+                new google.maps.LatLng(33.99165, -81.03196), //Strom Thurmond Wellness and Fitness Center
+                new google.maps.LatLng(33.98933, -81.02939), //Swearingen Engineering center
+                new google.maps.LatLng(34.00104, -81.02511), //The Graduate at Columbia
+                new google.maps.LatLng(33.97288, -81.01906) //Williams Brice Building
+
+
   ];
-}
-
-// function that generates gradients using two colors
-function generateGradient(startColor, endColor) {
-  steps = 13;
-  const start = {
-      r: parseInt(startColor.substring(1, 3), 16),
-      g: parseInt(startColor.substring(3, 5), 16),
-      b: parseInt(startColor.substring(5, 7), 16),
-      a: 1
-  };
-
-  const end = {
-      r: parseInt(endColor.substring(1, 3), 16),
-      g: parseInt(endColor.substring(3, 5), 16),
-      b: parseInt(endColor.substring(5, 7), 16),
-      a: 1
-  };
-
-  let gradient = [];
-
-  for (let i = 0; i <= steps; i++) {
-      const t = i / steps;
-      const r = Math.round(start.r + (end.r - start.r) * t);
-      const g = Math.round(start.g + (end.g - start.g) * t);
-      const b = Math.round(start.b + (end.b - start.b) * t);
-      const a = (start.a + (end.a - start.a) * t).toFixed(2); // Adjust for opacity if needed
-      gradient.push(`rgba(${r}, ${g}, ${b}, ${a})`);
-  }
-
-  return gradient;
 }
 
 window.initMap = initMap;

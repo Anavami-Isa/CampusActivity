@@ -9,11 +9,78 @@
 <div class="header"></div>
   <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
-      <li>Things to do on Campus:</li>
-      <li><a href="" target="_blank">Study  <i class="fa fa-chevron-down" style="font-size:18px"></i></a></li>
-      <li><a href="" target="_blank">Recreation  <i class="fa fa-chevron-down" style="font-size:18px"></i></a></li>
-      <li><a href="" target="_blank">Food  <i class="fa fa-chevron-down" style="font-size:18px"></i></a></li>
+      <li>Places to go on Campus:</li>
+      <li class="dropdown-btn"><a>Study  <i class="fa fa-chevron-down" style="font-size:18px"></i></a></li>
+          <div class="dropdown-container">
+            <ul>
+              <li><p>300 Main Street</p></li>
+              <li><p>Booker T. Washington</p></li>
+              <li><p>Callcott Social Sciences Center</p></li>
+              <li><p>Carolina Coliseum</p></li>
+              <li><p>Close-Hipp</p></li>
+              <li><p>Coker Life Sciences Building</p></li>
+              <li><p>Darla Moore School of Business</p></li>
+              <li><p>Davis College</p></li>
+              <li><p>Davis field</p></li>
+              <li><p>Gambrell Hall</p></li>
+              <li><p>Humanities Building</p></li>
+              <li><p>Innovation center building</p></li>
+              <li><p>Jones Physical Health Building</p></li>
+              <li><p>Joseph F. Rice School of Law</p></li>
+              <li><p>Koger Center</p></li>
+              <li><p>LeConte College</p></li>
+              <li><p>McMaster College</p></li>
+              <li><p>Petigru College</p></li>
+              <li><p>Russell House</p></li>
+              <li><p>School of Journalism and Mass Communications</p></li>
+              <li><p>School of Music</p></li>
+              <li><p>Science and Technology building</p></li>
+              <li><p>Swearingen Engineering center</p></li>
+              <li><p>The Graduate at Columbia</p></li>
+              <li><p>Thomas Cooper Library</p></li>
+              <li><p>Williams Brice Building</p></li>
+            </ul>
+          </div>
+      <li class="dropdown-btn"><a>Recreation  <i class="fa fa-chevron-down" style="font-size:18px"></i></a></li>
+          <div class="dropdown-container">
+            <ul>
+              <li><p>Blatt field</p></li>
+              <li><p>Blatt PEC</p></li>
+              <li><p>Carolina indoor track and field complex
+                Carolina Volleyball Center</p></li>
+              <li><p>Davis field</p></li>
+              <li><p>Horseshoe</p></li>
+              <li><p>Koger Center</p></li>
+              <li><p>Strom fields</p></li>
+              <li><p>Strom Thurmond Wellness and Fitness Center</p></li>
+              <li><p>The Graduate at Columbia</p></li>
+            </ul>
+          </div>
+      <li class="dropdown-btn"><a>Food  <i class="fa fa-chevron-down" style="font-size:18px"></i></a></li>
+          <div class="dropdown-container">
+            <ul>
+              <li><p>Russell House</p></li>
+              <li><p>The Graduate at Columbia</p></li>
+            </ul>
+          </div>
     </ul>
+    <script>
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+      
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+          }
+        });
+      }
+      </script>
+
   </div>
   <div id='center' class="main center">
     <div class="mainInner">

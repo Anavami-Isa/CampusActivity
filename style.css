@@ -75,7 +75,7 @@ body {
     width: 15%;
     height: calc(100% - 55px); /* Take remaining height after navbar */
     z-index: 2; /* Ensure sidebar is above the map */
-
+    overflow-y: auto;
     background: url(https://drive.google.com/thumbnail?id=1CmTH8inu_-xfQLq-ZkRoXITYFV9y35Ab);
     background-size: auto 100%;
     background-repeat: no-repeat;
@@ -100,6 +100,10 @@ body {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.50);
 }
+li p{
+    font-size: 10px;
+    margin: 0px;
+}
 .sidebarMenuInner li a{
     color: #fff;
     text-transform: uppercase;
@@ -119,23 +123,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 /*.gmnoprint div {background:none !important;}
 /* end of footer remover */
 
-#floating-panel {
-    position: absolute;
-    top: 10px;
-    left: 25%;
-    z-index: 5;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #999;
-    text-align: center;
-    font-family: "Roboto", "sans-serif";
-    line-height: 30px;
-    padding-left: 10px;
-    background-color: #fff;
-    border: 1px solid #999;
-    left: 25%;
-    padding: 5px;
-    position: absolute;
-    top: 10px;
-    z-index: 5;
-}
+.dropdown-container {
+    display: none;
+    padding-left: 20px;
+  }

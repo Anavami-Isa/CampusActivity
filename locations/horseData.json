@@ -1244,7 +1244,7 @@
                 {
                     "hour": 22,
                     "intensity_txt": "Low",
-                    "intensity_nr": -2
+                      "intensity_nr": -2
                 },
                 {
                     "hour": 23,
@@ -1255,7 +1255,7 @@
                     "hour": 0,
                     "intensity_txt": "Low",
                     "intensity_nr": -2
-                },
+                 },
                 {
                     "hour": 1,
                     "intensity_txt": "Low",

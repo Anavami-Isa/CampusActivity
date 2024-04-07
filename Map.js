@@ -44,6 +44,8 @@ function initMap() {
   heatmap.set("opacity", 0.6);
     //45 deg tilt
     map.setTilt(45);
+  const legend = document.getElementById("legend");
+  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
 
   // Markers
                     // horseshoe

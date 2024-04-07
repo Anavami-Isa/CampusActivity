@@ -37,7 +37,6 @@ stromResponse = requests.request("POST", url, params=stromData)
 with open('locations/stromData.json', 'w', encoding='utf-8') as f:
     json.dump(stromResponse.json(), f, ensure_ascii=False, indent=4)
 
-
 # Swearingen data
 swearData = {
     'api_key_private': 'USC College of Engineering and Computing',

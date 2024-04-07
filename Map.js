@@ -1,12 +1,36 @@
 let map, heatmap;
-const UOFSC_MAP_BOUNDS = {
-  north: 34.00171475483253,
-  south: 33.98788548266928,
-  west: -81.03851026552532,
-  east: -81.019450539459
-};
+var curr_time = 0;
+var curr_day = 0;
+
+function getBusy(name, day, hour) {
+  const filePath = "locations/" + name + "Data.json";
+  let jsonData;
+  fetch(filePath)
+  .then(response => response.text())
+  .then(data => {
+    jsonData = data; // Print the contents of the file to the console
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+  const data = JSON.parse(jsonData);
+  let dayData = {};
+  data.analysis.forEach(item => {
+      let dayInt = item.day_info.day_int;
+      dayData[dayInt] = item.day_raw;
+  });
+  console.log(dayData[day][hour]);
+}
+
 
 function initMap() {
+  const UOFSC_MAP_BOUNDS = {
+    north: 34.00171475483253,
+    south: 33.98788548266928,
+    west: -81.03851026552532,
+    east: -81.019450539459
+  };
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 18,
     center: { lat:33.99465811305482, lng:-81.03008581723475 },
@@ -50,7 +74,8 @@ function initMap() {
   // Markers
                     // horseshoe
                     const horseInfowindow = new google.maps.InfoWindow({
-                      content: "N/A"
+                      content: "<p>N/A<p>"
+
                     });
                     const horseMarker = new google.maps.Marker({
                       position: { lat:33.99465811305482, lng:-81.03008581723475 },
@@ -94,9 +119,20 @@ function changeRadius() {
   heatmap.set("radius", heatmap.get("radius") ? null : 20);
 }
 
+function getTime() {
+  var timeInput = document.getElementById("timeInput");
+  return timeInput.value.slice(0,2);
+}
+function getDay() {
+  var dayInput = document.getElementById("daySelector");
+  return daySelector.value;
+}
+
+
 // Heatmap data: 3 points right now
 function getPoints() {
   return [
+    curr_time = getTime(), curr_day = getDay(), getBusy("horse", 0, 0),
                 new google.maps.LatLng(33.99811746170734, -81.0290723594025), //horseshoe
                 new google.maps.LatLng(33.99662788347111, -81.02724403700644), //russell
                 new google.maps.LatLng(33.99527889888602, -81.02812945097112), //tcoop
